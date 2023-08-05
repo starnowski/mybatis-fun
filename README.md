@@ -8,3 +8,4 @@ https://github.com/eugenp/tutorials/tree/master/persistence-modules/spring-mybat
 http://mybatis.org/spring/
 https://mybatis.org/spring/getting-started.html
 https://www.springboottutorial.com/spring-boot-and-iBatis-with-h2-tutorial
+https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-mybatis/src/main/resources/schema.sql
