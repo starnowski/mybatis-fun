@@ -5,8 +5,7 @@
     <select id="getProducts" resultType="com.github.starnowski.mybatis.h2.model.Product" parameterType="com.github.starnowski.mybatis.h2.requests.ListProducts">
         SELECT * FROM product
         <where>
-            <foreach item="item" index="index" collection="productIds"
-                     open="id in (" separator="," close=")" nullable="true">
+            <foreach item="item" index="index" collection="productIds" open="id in (" separator="," close=")">
                 #{item}
             </foreach>
         </where>
