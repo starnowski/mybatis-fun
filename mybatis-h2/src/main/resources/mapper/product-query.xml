@@ -1,5 +1,5 @@
-<mapper namespace="com.example.mapper.ExampleMapper">
-    <select id="getById" resultType="com.example.model.Example">
+<mapper namespace="com.github.starnowski.mybatis.h2.mappers.ProductMapper">
+    <select id="getProducts" resultType="com.github.starnowski.mybatis.h2.model.Product" parameterType="com.github.starnowski.mybatis.h2.requests.ListProducts">
         SELECT * FROM product WHERE
         id  in #{id}
     </select>
