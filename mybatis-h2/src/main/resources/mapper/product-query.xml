@@ -1,6 +1,11 @@
 <mapper namespace="com.github.starnowski.mybatis.h2.mappers.ProductMapper">
     <select id="getProducts" resultType="com.github.starnowski.mybatis.h2.model.Product" parameterType="com.github.starnowski.mybatis.h2.requests.ListProducts">
-        SELECT * FROM product WHERE
-        id  in #{id}
+        SELECT * FROM product
+        <where>
+            <foreach item="item" index="index" collection="productIds"
+                     open="id in (" separator="," close=")" nullable="true">
+                #{item}
+            </foreach>
+        </where>
     </select>
 </mapper>
