@@ -5,13 +5,13 @@ import java.util.UUID;
 public class Product {
     private Long id;
     private String name;
-    private UUID uuid;
+    private String uuid;
 
-    public UUID getUuid() {
+    public String getUuid() {
         return uuid;
     }
 
-    public void setUuid(UUID uuid) {
+    public void setUuid(String uuid) {
         this.uuid = uuid;
     }
 
