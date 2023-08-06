@@ -1,5 +1,6 @@
 <configuration>
     <mappers>
-        <mapper resource="mapper/product-query.xml"/>
+        <mapper resource="mapper/ProductMapper.xml"/>
+        <mapper resource="ProductMapper.xml"/>
     </mappers>
 </configuration>
