@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-@Mapper
+//@Mapper
 public interface ProductMapper {
 
     List<Product> getProducts(ListProducts listProducts);

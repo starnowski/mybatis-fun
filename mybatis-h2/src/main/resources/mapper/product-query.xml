@@ -1,3 +1,6 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.github.starnowski.mybatis.h2.mappers.ProductMapper">
     <select id="getProducts" resultType="com.github.starnowski.mybatis.h2.model.Product" parameterType="com.github.starnowski.mybatis.h2.requests.ListProducts">
         SELECT * FROM product
