@@ -15,3 +15,7 @@ https://stackoverflow.com/questions/33197085/mybatis-3-get-sql-string-from-mappe
 
 H2 - page
 http://www.h2database.com/html/datatypes.html#uuid_type
+
+
+https://groups.google.com/g/mybatis-user/c/JlJde0DEeOU
+
