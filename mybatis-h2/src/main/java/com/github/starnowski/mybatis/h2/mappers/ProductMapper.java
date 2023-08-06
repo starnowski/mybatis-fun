@@ -10,4 +10,5 @@ import java.util.List;
 public interface ProductMapper {
 
     List<Product> getProducts(ListProducts listProducts);
+    List<Product> getProductsByUuid(ListProducts listProducts);
 }

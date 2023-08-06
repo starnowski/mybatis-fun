@@ -57,4 +57,13 @@ class ProductMapperTest {
         boundSql.getParameterMappings();
         assertThat(boundSql.getParameterMappings()).isNotNull().hasSize(3);
     }
+
+    @Test
+    public void whenRecordsInDatabase_shouldReturnProductsByUUIDs() {
+        // WHEN
+        List<Product> products = productMapper.getProductsByUuid(new ListProducts().withUuids(Arrays.asList("04964ddf-db22-4612-b142-49da2bd9ff0b", "f7a66adf-e656-4bb5-b192-7a62f3be8aea")));
+
+        // THEN
+        assertThat(products).isNotNull().hasSize(2);
+    }
 }
