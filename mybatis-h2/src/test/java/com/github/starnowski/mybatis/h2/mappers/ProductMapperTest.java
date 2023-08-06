@@ -86,4 +86,15 @@ class ProductMapperTest {
         assertThat(products).isNotNull().hasSize(expectedIds.size());
         assertThat(products.stream().map(product -> product.getId()).collect(Collectors.toSet())).isEqualTo(new HashSet<>(expectedIds));
     }
+
+    @ParameterizedTest
+    @MethodSource("provideUUIDsWithSQLInjectedStatementAndExpectedIds")
+    public void whenRecordsInDatabase_shouldReturnProductsByUUIDsEventIfInputHasSQLInjectionAttackAndMethodUseCustomEscapeMethod(List<String> uuids, List<Long> expectedIds) {
+        // WHEN
+        List<Product> products = productMapper.getProductsByUuidWithEscapingUtils(new ListProducts().withUuids(uuids));
+
+        // THEN
+        assertThat(products).isNotNull().hasSize(expectedIds.size());
+        assertThat(products.stream().map(product -> product.getId()).collect(Collectors.toSet())).isEqualTo(new HashSet<>(expectedIds));
+    }
 }

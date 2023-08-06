@@ -18,4 +18,12 @@
             </foreach>
         </where>
     </select>
+    <select id="getProductsByUuidWithEscapingUtils" resultType="com.github.starnowski.mybatis.h2.model.Product" parameterType="com.github.starnowski.mybatis.h2.requests.ListProducts">
+        SELECT * FROM product
+        <where>
+            <foreach item="item" index="index" collection="uuids" open="uuid in (" separator="," close=")">
+                '${@com.github.starnowski.mybatis.h2.util.CustomUtil@esc(item)}'
+            </foreach>
+        </where>
+    </select>
 </mapper>

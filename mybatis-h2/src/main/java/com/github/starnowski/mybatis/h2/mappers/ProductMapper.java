@@ -11,4 +11,5 @@ public interface ProductMapper {
 
     List<Product> getProducts(ListProducts listProducts);
     List<Product> getProductsByUuid(ListProducts listProducts);
+    List<Product> getProductsByUuidWithEscapingUtils(ListProducts listProducts);
 }
