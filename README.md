@@ -12,3 +12,6 @@ https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-mybat
 
 How to get prepared statement string
 https://stackoverflow.com/questions/33197085/mybatis-3-get-sql-string-from-mapper 
+
+H2 - page
+http://www.h2database.com/html/datatypes.html#uuid_type
