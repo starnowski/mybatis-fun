@@ -97,4 +97,19 @@ class ProductMapperTest {
         assertThat(products).isNotNull().hasSize(expectedIds.size());
         assertThat(products.stream().map(product -> product.getId()).collect(Collectors.toSet())).isEqualTo(new HashSet<>(expectedIds));
     }
+
+    @ParameterizedTest
+    @MethodSource("provideUUIDsWithSQLInjectedStatementAndExpectedIds")
+    public void whenRecordsInDatabase_shouldReturnPreparedStatementWithNofParametersForPreparedStatement(List<String> uuids, List<Long> expectedIds) {
+        // GIVEN
+        Configuration configuration = sessionFactory.getConfiguration();
+        MappedStatement ms = configuration.getMappedStatement("com.github.starnowski.mybatis.h2.mappers.ProductMapper.getProductsByUuidWithEscapingUtils");
+
+        // WHEN
+        BoundSql boundSql = ms.getBoundSql(new ListProducts().withUuids(uuids));
+
+        // THEN
+        boundSql.getParameterMappings();
+        assertThat(boundSql.getParameterMappings()).isNotNull().isEmpty();
+    }
 }
