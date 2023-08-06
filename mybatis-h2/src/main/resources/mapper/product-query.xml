@@ -1,0 +1,6 @@
+<mapper namespace="com.example.mapper.ExampleMapper">
+    <select id="getById" resultType="com.example.model.Example">
+        SELECT * FROM product WHERE
+        id  in #{id}
+    </select>
+</mapper>

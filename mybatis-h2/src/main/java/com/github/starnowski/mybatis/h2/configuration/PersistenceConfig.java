@@ -14,7 +14,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("com.github.starnowski.mybatis.h2")
+@MapperScan("com.github.starnowski.mybatis.h2.mappers")
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, MybatisAutoConfiguration.class })
 public class PersistenceConfig {
 
