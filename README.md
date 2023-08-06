@@ -9,3 +9,6 @@ http://mybatis.org/spring/
 https://mybatis.org/spring/getting-started.html
 https://www.springboottutorial.com/spring-boot-and-iBatis-with-h2-tutorial
 https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-mybatis/src/main/resources/schema.sql
+
+How to get prepared statement string
+https://stackoverflow.com/questions/33197085/mybatis-3-get-sql-string-from-mapper 
