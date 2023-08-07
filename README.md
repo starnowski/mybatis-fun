@@ -1,3 +1,6 @@
+[![Run tests for mybatis-h2](https://github.com/starnowski/mybatis-fun/actions/workflows/ci.yml/badge.svg)](https://github.com/starnowski/mybatis-fun/actions/workflows/ci.yml)
+
+
 # mybatis-fun
 Fun with mybatis
 
