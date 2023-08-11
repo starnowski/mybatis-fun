@@ -22,3 +22,7 @@ http://www.h2database.com/html/datatypes.html#uuid_type
 
 https://groups.google.com/g/mybatis-user/c/JlJde0DEeOU
 
+
+
+### SQL Joins
+https://www.geeksforgeeks.org/inner-join-vs-outer-join/
