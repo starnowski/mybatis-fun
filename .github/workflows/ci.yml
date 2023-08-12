@@ -2,6 +2,10 @@ name: Run tests for mybatis-h2
 
 on:
   push:
+    paths:
+      - 'mybatis-h2/**'
+      - 'mybatis-h2/**'
+      - '.github/workflows/mybatis-h2.yml'
 
 jobs:
 
