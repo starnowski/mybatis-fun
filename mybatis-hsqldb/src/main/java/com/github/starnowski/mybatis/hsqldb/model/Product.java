@@ -1,6 +1,4 @@
-package com.github.starnowski.mybatis.h2.model;
-
-import java.util.UUID;
+package com.github.starnowski.mybatis.hsqldb.model;
 
 public class Product {
     private Long id;

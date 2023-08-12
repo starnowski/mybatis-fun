@@ -26,3 +26,8 @@ https://groups.google.com/g/mybatis-user/c/JlJde0DEeOU
 
 ### SQL Joins
 https://www.geeksforgeeks.org/inner-join-vs-outer-join/
+
+
+### HSQLDB
+
+https://www.tutorialspoint.com/hsqldb/hsqldb_joins.htm

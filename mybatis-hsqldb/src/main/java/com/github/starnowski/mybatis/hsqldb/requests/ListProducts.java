@@ -1,7 +1,6 @@
-package com.github.starnowski.mybatis.h2.requests;
+package com.github.starnowski.mybatis.hsqldb.requests;
 
 import java.util.List;
-import java.util.UUID;
 
 public class ListProducts {
 

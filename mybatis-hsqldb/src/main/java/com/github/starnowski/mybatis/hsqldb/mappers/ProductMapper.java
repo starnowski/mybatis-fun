@@ -1,8 +1,8 @@
-package com.github.starnowski.mybatis.h2.mappers;
+package com.github.starnowski.mybatis.hsqldb.mappers;
 
-import com.github.starnowski.mybatis.h2.model.Product;
-import com.github.starnowski.mybatis.h2.model.ProductWithManyToOneProductRelation;
-import com.github.starnowski.mybatis.h2.requests.ListProducts;
+import com.github.starnowski.mybatis.hsqldb.model.Product;
+import com.github.starnowski.mybatis.hsqldb.model.ProductWithManyToOneProductRelation;
+import com.github.starnowski.mybatis.hsqldb.requests.ListProducts;
 
 import java.util.List;
 

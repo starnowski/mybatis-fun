@@ -1,8 +1,8 @@
-package com.github.starnowski.mybatis.h2.mappers;
+package com.github.starnowski.mybatis.hsqldb.mappers;
 
-import com.github.starnowski.mybatis.h2.model.Product;
-import com.github.starnowski.mybatis.h2.model.ProductWithManyToOneProductRelation;
-import com.github.starnowski.mybatis.h2.requests.ListProducts;
+import com.github.starnowski.mybatis.hsqldb.model.Product;
+import com.github.starnowski.mybatis.hsqldb.model.ProductWithManyToOneProductRelation;
+import com.github.starnowski.mybatis.hsqldb.requests.ListProducts;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.session.Configuration;
@@ -61,7 +61,7 @@ class ProductMapperTest {
     public void whenRecordsInDatabase_shouldReturnPreparedStatementWithCorrectNumberOfParameters() {
         // GIVEN
         Configuration configuration = sessionFactory.getConfiguration();
-        MappedStatement ms = configuration.getMappedStatement("com.github.starnowski.mybatis.h2.mappers.ProductMapper.getProducts");
+        MappedStatement ms = configuration.getMappedStatement("com.github.starnowski.mybatis.hsqldb.mappers.ProductMapper.getProducts");
 
         // WHEN
         BoundSql boundSql = ms.getBoundSql(new ListProducts().withProductIds(asList(1, 2, 3)));
@@ -108,7 +108,7 @@ class ProductMapperTest {
     public void whenRecordsInDatabase_shouldReturnPreparedStatementWithNofParametersForPreparedStatement(List<String> uuids, List<Long> expectedIds) {
         // GIVEN
         Configuration configuration = sessionFactory.getConfiguration();
-        MappedStatement ms = configuration.getMappedStatement("com.github.starnowski.mybatis.h2.mappers.ProductMapper.getProductsByUuidWithEscapingUtils");
+        MappedStatement ms = configuration.getMappedStatement("com.github.starnowski.mybatis.hsqldb.mappers.ProductMapper.getProductsByUuidWithEscapingUtils");
 
         // WHEN
         BoundSql boundSql = ms.getBoundSql(new ListProducts().withUuids(uuids));
@@ -118,7 +118,6 @@ class ProductMapperTest {
         assertThat(boundSql.getParameterMappings()).isNotNull().isEmpty();
     }
 
-    @Disabled("H2 does not implement outer join")
     @Test
     public void shouldReturnOuterJoinResults() {
         // GIVEN

@@ -1,4 +1,4 @@
-package com.github.starnowski.mybatis.h2;
+package com.github.starnowski.mybatis.hsqldb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

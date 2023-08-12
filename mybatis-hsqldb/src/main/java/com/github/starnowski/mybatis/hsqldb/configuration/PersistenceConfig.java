@@ -1,4 +1,4 @@
-package com.github.starnowski.mybatis.h2.configuration;
+package com.github.starnowski.mybatis.hsqldb.configuration;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -13,12 +13,11 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.ResourcePatternUtils;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.orm.hibernate5.SpringSessionContext;
 
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("com.github.starnowski.mybatis.h2.mappers")
+@MapperScan("com.github.starnowski.mybatis.hsqldb.mappers")
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class
 //        ,
 //        MybatisAutoConfiguration.class
@@ -31,7 +30,7 @@ public class PersistenceConfig {
     @Bean
     public DataSource dataSource() {
         return new EmbeddedDatabaseBuilder()
-                .setType(EmbeddedDatabaseType.H2)
+                .setType(EmbeddedDatabaseType.HSQL)
                 .addScript("schema.sql")
                 .addScript("data.sql")
                 .build();
