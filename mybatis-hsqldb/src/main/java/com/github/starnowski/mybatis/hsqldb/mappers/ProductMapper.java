@@ -13,5 +13,6 @@ public interface ProductMapper {
     List<Product> getProductsByUuidWithEscapingUtils(ListProducts listProducts);
 
     List<ProductWithManyToOneProductRelation> getOuterJoin();
+    List<ProductWithManyToOneProductRelation> getInnerJoin();
 
 }

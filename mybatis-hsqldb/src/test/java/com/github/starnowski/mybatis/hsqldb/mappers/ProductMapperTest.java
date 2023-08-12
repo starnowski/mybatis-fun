@@ -44,7 +44,7 @@ class ProductMapperTest {
         );
     }
 
-    private static ProductWithManyToOneProductRelation joinRelation(Long productId, Long relationId) {
+    private static ProductWithManyToOneProductRelation joinRelation(Long relationId, Long productId) {
         return new ProductWithManyToOneProductRelation(productId, relationId);
     }
 
@@ -126,13 +126,30 @@ class ProductMapperTest {
                 joinRelation(3L, 1L),
                 joinRelation(4L, null),
                 joinRelation(5L, null),
-                joinRelation(6L, 3L)
+                joinRelation(6L, 3L),
+                joinRelation(null, 2L)
         ));
 
         // WHEN
         List<ProductWithManyToOneProductRelation> results = productMapper.getOuterJoin();
 
         // THEN
-        assertThat(new HashSet<>(results)).isNotNull();
+        assertThat(new HashSet<>(results)).isNotNull().isEqualTo(expectedResults);
+    }
+
+    @Test
+    public void shouldReturnInnerJoinResults() {
+        // GIVEN
+        Set<ProductWithManyToOneProductRelation> expectedResults = new HashSet<>(Arrays.asList(joinRelation(1L, 1L),
+                joinRelation(2L, 1L),
+                joinRelation(3L, 1L),
+                joinRelation(6L, 3L)
+        ));
+
+        // WHEN
+        List<ProductWithManyToOneProductRelation> results = productMapper.getInnerJoin();
+
+        // THEN
+        assertThat(new HashSet<>(results)).isNotNull().isEqualTo(expectedResults);
     }
 }

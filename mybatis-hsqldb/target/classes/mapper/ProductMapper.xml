@@ -29,4 +29,7 @@
     <select id="getOuterJoin" resultType="com.github.starnowski.mybatis.hsqldb.model.ProductWithManyToOneProductRelation">
         SELECT p.id as productId, m.id as relationId FROM product p FULL JOIN many_to_one_product m ON p.id = m.product_id
     </select>
+    <select id="getInnerJoin" resultType="com.github.starnowski.mybatis.hsqldb.model.ProductWithManyToOneProductRelation">
+        SELECT p.id as productId, m.id as relationId FROM product p INNER JOIN many_to_one_product m ON p.id = m.product_id
+    </select>
 </mapper>
