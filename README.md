@@ -1,3 +1,6 @@
+[![Run tests for mybatis-h2](https://github.com/starnowski/mybatis-fun/actions/workflows/ci.yml/badge.svg)](https://github.com/starnowski/mybatis-fun/actions/workflows/ci.yml)
+
+
 # mybatis-fun
 Fun with mybatis
 
@@ -19,3 +22,7 @@ http://www.h2database.com/html/datatypes.html#uuid_type
 
 https://groups.google.com/g/mybatis-user/c/JlJde0DEeOU
 
+
+
+### SQL Joins
+https://www.geeksforgeeks.org/inner-join-vs-outer-join/
