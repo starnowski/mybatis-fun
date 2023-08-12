@@ -1,0 +1,32 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.starnowski.mybatis.h2.mappers.ProductMapper">
+    <select id="getProducts" resultType="com.github.starnowski.mybatis.h2.model.Product" parameterType="com.github.starnowski.mybatis.h2.requests.ListProducts">
+        SELECT * FROM product
+        <where>
+            <foreach item="item" index="index" collection="productIds" open="id in (" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+    <select id="getProductsByUuid" resultType="com.github.starnowski.mybatis.h2.model.Product" parameterType="com.github.starnowski.mybatis.h2.requests.ListProducts">
+        SELECT * FROM product
+        <where>
+            <foreach item="item" index="index" collection="uuids" open="uuid in (" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+    <select id="getProductsByUuidWithEscapingUtils" resultType="com.github.starnowski.mybatis.h2.model.Product" parameterType="com.github.starnowski.mybatis.h2.requests.ListProducts">
+        SELECT * FROM product
+        <where>
+            <foreach item="item" index="index" collection="uuids" open="uuid in (" separator="," close=")">
+                '${@com.github.starnowski.mybatis.h2.util.CustomUtil@esc(item)}'
+            </foreach>
+        </where>
+    </select>
+    <select id="getOuterJoin" resultType="com.github.starnowski.mybatis.h2.model.ProductWithManyToOneProductRelation">
+        SELECT * FROM `PRODUCT` p OUTER JOIN `MANY_TO_ONE_PRODUCT` m ON p.id = m.product_id
+    </select>
+</mapper>

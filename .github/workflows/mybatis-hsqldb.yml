@@ -1,0 +1,33 @@
+name: Run tests for mybatis-hsqldb
+
+on:
+  push:
+    paths:
+      - 'mybatis-hsqldb/**'
+      - 'mybatis-hsqldb/**'
+      - '.github/workflows/mybatis-hsqldb.yml'
+
+jobs:
+
+  integraion_tests:
+    #    needs: [compilation_and_unit_tests]
+    runs-on: ubuntu-latest
+    name: "Integration test for mybatis-hsqldb"
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        # Install JDKs and maven toolchain
+      - uses: actions/setup-java@v3
+        name: Set up JDK 17
+        id: setupJava17
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+      - uses: cactuslab/maven-toolchains-xml-action@v1
+        with:
+          toolchains: |
+            [
+            {"jdkVersion": "17", "jdkHome": "${{steps.setupJava17.outputs.path}}"}
+            ]
+      - name: Run tests
+        run: cd ./mybatis-hsqldb && ./mvnw -DskipTests --quiet clean install && ./mvnw test

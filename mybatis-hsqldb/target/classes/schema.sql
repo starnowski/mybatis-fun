@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS `PRODUCT`
+(
+    `id`     INTEGER PRIMARY KEY,
+    `name`  VARCHAR(100) NOT NULL,
+    `uuid`  VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS `MANY_TO_ONE_PRODUCT`
+(
+    `id`     INTEGER PRIMARY KEY,
+    `product_id`     INTEGER
+);
