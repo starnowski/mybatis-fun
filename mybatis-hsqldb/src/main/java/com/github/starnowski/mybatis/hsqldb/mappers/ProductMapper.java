@@ -14,5 +14,7 @@ public interface ProductMapper {
 
     List<ProductWithManyToOneProductRelation> getOuterJoin();
     List<ProductWithManyToOneProductRelation> getInnerJoin();
+    List<ProductWithManyToOneProductRelation> getLeftJoin();
+    List<ProductWithManyToOneProductRelation> getRightJoin();
 
 }

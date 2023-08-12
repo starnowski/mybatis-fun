@@ -152,4 +152,39 @@ class ProductMapperTest {
         // THEN
         assertThat(new HashSet<>(results)).isNotNull().isEqualTo(expectedResults);
     }
+
+    @Test
+    public void shouldReturnLeftJoinResults() {
+        // GIVEN
+        Set<ProductWithManyToOneProductRelation> expectedResults = new HashSet<>(Arrays.asList(joinRelation(1L, 1L),
+                joinRelation(2L, 1L),
+                joinRelation(3L, 1L),
+                joinRelation(6L, 3L),
+                joinRelation(null, 2L)
+        ));
+
+        // WHEN
+        List<ProductWithManyToOneProductRelation> results = productMapper.getLeftJoin();
+
+        // THEN
+        assertThat(new HashSet<>(results)).isNotNull().isEqualTo(expectedResults);
+    }
+
+    @Test
+    public void shouldReturnRightJoinResults() {
+        // GIVEN
+        Set<ProductWithManyToOneProductRelation> expectedResults = new HashSet<>(Arrays.asList(joinRelation(1L, 1L),
+                joinRelation(2L, 1L),
+                joinRelation(3L, 1L),
+                joinRelation(4L, null),
+                joinRelation(5L, null),
+                joinRelation(6L, 3L)
+        ));
+
+        // WHEN
+        List<ProductWithManyToOneProductRelation> results = productMapper.getRightJoin();
+
+        // THEN
+        assertThat(new HashSet<>(results)).isNotNull().isEqualTo(expectedResults);
+    }
 }

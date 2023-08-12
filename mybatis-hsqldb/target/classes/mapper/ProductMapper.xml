@@ -32,4 +32,10 @@
     <select id="getInnerJoin" resultType="com.github.starnowski.mybatis.hsqldb.model.ProductWithManyToOneProductRelation">
         SELECT p.id as productId, m.id as relationId FROM product p INNER JOIN many_to_one_product m ON p.id = m.product_id
     </select>
+    <select id="getLeftJoin" resultType="com.github.starnowski.mybatis.hsqldb.model.ProductWithManyToOneProductRelation">
+        SELECT p.id as productId, m.id as relationId FROM product p LEFT JOIN many_to_one_product m ON p.id = m.product_id
+    </select>
+    <select id="getRightJoin" resultType="com.github.starnowski.mybatis.hsqldb.model.ProductWithManyToOneProductRelation">
+        SELECT p.id as productId, m.id as relationId FROM product p RIGHT JOIN many_to_one_product m ON p.id = m.product_id
+    </select>
 </mapper>
